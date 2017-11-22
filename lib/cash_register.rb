@@ -1,9 +1,9 @@
 class CashRegister
   attr_accessor :total, :discount, :title, :price, :quantity
-  @@all = []
   def initialize(discount = 0)
     @total = 0
     @discount = discount
+    @shopping_cart = []
   end
 
   def total
@@ -15,7 +15,7 @@ class CashRegister
     @price = price
     @quantity = quantity
     @quantity.times do
-      @@all << title
+      @@shopping_cart << @title
     end
     cost = @price * @quantity
     @total += cost
@@ -31,7 +31,7 @@ class CashRegister
   end
 
   def items
-    @@all
+    @shopping_cart
   end
 
   def void_last_transaction
