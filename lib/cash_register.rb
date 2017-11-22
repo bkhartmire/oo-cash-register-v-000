@@ -35,8 +35,8 @@ class CashRegister
   end
 
   def void_last_transaction
-    @shopping_cart.pop
-    @shopping_cart.total
+    reduction = @shopping_cart[-1].price
+    @total -= reduction
   end
 
 end
