@@ -15,7 +15,7 @@ class CashRegister
     @price = price
     @quantity = quantity
     @quantity.times do
-      @@shopping_cart << @title
+      @shopping_cart << @title
     end
     cost = @price * @quantity
     @total += cost
