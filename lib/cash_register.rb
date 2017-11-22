@@ -16,7 +16,7 @@ class CashRegister
     quantity.times do
       @shopping_cart << @title
     end
-    cost = @price * @quantity
+    cost = @price * quantity
     @total += cost
     @last_transaction = price * quantity
   end
