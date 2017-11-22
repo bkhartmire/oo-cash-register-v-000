@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessor :total, :discount, :title, :price, :quantity, :shopping_cart
+  attr_accessor :total, :discount, :title, :price, :quantity, :last_transaction
   def initialize(discount = 0)
     @total = 0
     @discount = discount
@@ -19,6 +19,7 @@ class CashRegister
     end
     cost = @price * @quantity
     @total += cost
+    @last_transaction = price * quantity
   end
 
   def apply_discount
@@ -35,8 +36,7 @@ class CashRegister
   end
 
   def void_last_transaction
-    reduction = @shopping_cart[-1].price
-    @total -= reduction
+    @total -= @last_transaction
   end
 
 end
