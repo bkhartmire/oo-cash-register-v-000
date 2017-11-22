@@ -32,7 +32,7 @@ class CashRegister
     @quantity.times do
       items << title
     end
-
+    items
   end
 
   def void_last_transaction
