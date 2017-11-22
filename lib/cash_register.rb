@@ -1,6 +1,5 @@
 class CashRegister
   attr_accessor :total, :discount, :title, :price, :quantity
-  @items = []
 
   def initialize(discount = 0)
     @total = 0
@@ -13,9 +12,6 @@ class CashRegister
 
   def add_item(title, price, quantity = 1)
     @title = title
-    quantity.times do
-      @@items << title
-    end
     @price = price
     @quantity = quantity
     cost = @price * @quantity
@@ -32,7 +28,11 @@ class CashRegister
   end
 
   def items
-    @items
+    items = []
+    @quantity.times do
+      items << title
+    end
+    
   end
 
   def void_last_transaction
