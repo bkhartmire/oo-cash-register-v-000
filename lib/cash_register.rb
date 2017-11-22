@@ -35,6 +35,8 @@ class CashRegister
   end
 
   def void_last_transaction
+    @shopping_cart.pop
+    @total
   end
 
 end
